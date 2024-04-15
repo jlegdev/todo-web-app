@@ -37,6 +37,7 @@ export class CategoryViewPresentationComponent implements OnInit, OnChanges {
 	}
 
 	private _initTasks(): void {
+		this.tasks.sort((a: Task, b: Task) => (new Date(a.deadline) > new Date(b.deadline) ? 1 : -1));
 		this.tasksNotFinished = this.tasks.filter((task: Task) => !task.isFinish);
 		this.tasksFinished = this.tasks.filter((task: Task) => task.isFinish);
 	}
