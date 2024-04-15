@@ -1,9 +1,10 @@
+
 # TodoCern
 
-# Usage
+## Usage
 Application can be used by running **npm start**
 
-# Dependency
+## Dependency
 This project uses :
 
 - Angular Material for components / design
@@ -20,7 +21,7 @@ CERN font and CERN colours are used. Angular Material theme was generated using 
 
 
 
-# Architecture
+## Architecture
 directories :
 
 - api : services for data api
@@ -41,7 +42,8 @@ Two modules are available:
 
 Components follow the container / presentation design
 
-# Possible evolution
+## Possible evolution
 - Use datepicker on task new / edit components. Put a minimal date value to today in html and using form Validator
 - Allow drag and drop on tasks list to handle the task finish's statu using Angular Drag and Drop
-- Implement on home page a panel displaying the tasks that will soon expire. 
+- Implement on home page a panel displaying the tasks that will soon expire.
+- Display form error on html (today, only the validate button is disabled)
