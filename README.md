@@ -40,3 +40,8 @@ Two modules are available:
 - The second is the category module, its lazy loaded when routing on Category View.
 
 Components follow the container / presentation design
+
+# Possible evolution
+- Use datepicker on task new / edit components. Put a minimal date value to today in html and using form Validator
+- Allow drag and drop on tasks list to handle the task finish's statu using Angular Drag and Drop
+- Implement on home page a panel displaying the tasks that will soon expire. 
