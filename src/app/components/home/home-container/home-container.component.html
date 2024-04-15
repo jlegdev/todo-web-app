@@ -1,0 +1,2 @@
+<app-home-presentation [categories]="($categories|async)??[]" (onEmitOnCategoryView)="onCategoryView($event)"
+  (onEmitCreateCategory)="onCreateCategory()"></app-home-presentation>

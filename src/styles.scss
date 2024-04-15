@@ -1,0 +1,67 @@
+@use '@angular/material' as mat;
+@include mat.core();
+
+// Fonts
+@import './assets/scss/cern-theme.scss';
+@import './assets/scss/cern-font.scss';
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "sourcesans-regular", "opensans-regular";
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "opensans-regular" !important;
+}
+
+.default-theme {
+  @include mat.core-theme($theme);
+  @include mat.all-component-themes($theme);
+
+  .primary {
+    background-color: $primary;
+    color: white !important;
+  }
+
+  .accent {
+    background-color: $accent;
+    color: white !important;
+  }
+
+  .warn {
+    background-color: $warn;
+  }
+}
+
+
+.vertical-centered{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.row-centered{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.row-around {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+.w-100{
+  width:100%;
+}
+.clickable{
+  cursor: pointer;
+}
+.marged {
+  margin: 5px !important;
+}

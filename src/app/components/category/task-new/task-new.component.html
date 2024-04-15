@@ -1,0 +1,19 @@
+<app-dialog-form [title]="'New task'" (onEmitValidateClick)="onValidate()" (onEmitCloseClick)="onClose()"
+  [isValidDisabled]="!form.valid">
+  <form [formGroup]="form" class="vertical-centered">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput [formControlName]="'name'" type="text" required />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput [formControlName]="'description'" type="text"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Deadline</mat-label>
+      <input matInput [formControlName]="'deadline'" type="date" required />
+    </mat-form-field>
+  </form>
+</app-dialog-form>

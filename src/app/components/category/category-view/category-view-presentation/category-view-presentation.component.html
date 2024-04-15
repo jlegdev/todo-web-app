@@ -1,0 +1,51 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{category.name}}
+      <button mat-icon-button color="primary"
+        (click)="onUpdateCategoryView()"><mat-icon>{{IconEnum.EDIT}}</mat-icon></button>
+      <button mat-icon-button color="primary"
+        (click)="onDeleteCurrentCategory()"><mat-icon>{{IconEnum.DELETE}}</mat-icon></button>
+    </mat-card-title>
+    <mat-card-subtitle>{{category.description}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-selection-list>
+      <div mat-subheader>On going</div>
+      <mat-list-item *ngFor="let taskNotFinished of tasksNotFinished">
+        <mat-icon matListItemIcon>{{IconEnum.CHEVRON}}</mat-icon>
+        <div matListItemTitle>{{taskNotFinished.name}}</div>
+        <div matListItemLine>{{taskNotFinished.deadline| date}} - {{taskNotFinished.description}}</div>
+        <button matListItemMeta mat-icon-button color="primary" (click)="onDeleteTask(taskNotFinished)">
+          <mat-icon>{{IconEnum.DELETE}}</mat-icon>
+        </button>
+        <button matListItemMeta mat-icon-button color="primary" (click)="onUpdateTaskView(taskNotFinished)">
+          <mat-icon>{{IconEnum.EDIT}}</mat-icon>
+        </button>
+        <button matListItemMeta mat-icon-button color="primary" (click)="onUpdateTaskStatu(taskNotFinished)">
+          <mat-icon>{{IconEnum.VALIDATE}}</mat-icon>
+        </button>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+
+      <div mat-subheader>Finished</div>
+      <mat-list-item *ngFor="let taskFinished of tasksFinished">
+        <mat-icon matListItemIcon>{{IconEnum.CHEVRON}}</mat-icon>
+        <div matListItemTitle><del>{{taskFinished.name}}</del></div>
+        <div matListItemLine><del>{{taskFinished.deadline| date}} - {{taskFinished.description}}</del></div>
+        <button matListItemMeta mat-icon-button color="primary" (click)="onDeleteTask(taskFinished)">
+          <mat-icon>{{IconEnum.DELETE}}</mat-icon>
+        </button>
+        <button matListItemMeta mat-icon-button color="primary" (click)="onUpdateTaskStatu(taskFinished)">
+          <mat-icon>{{IconEnum.UNVALIDATE}}</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-selection-list>
+  </mat-card-content>
+
+
+</mat-card>
+<div class="row-centered marged card-footer">
+  <button mat-flat-button color="primary" class="marged" (click)="onNewTaskView()">
+    <mat-icon>{{IconEnum.NEW}}</mat-icon>
+    Add task</button>
+</div>

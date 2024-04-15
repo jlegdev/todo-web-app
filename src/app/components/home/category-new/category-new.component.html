@@ -1,0 +1,14 @@
+<app-dialog-form [title]="'New category'" (onEmitValidateClick)="onValidate()" (onEmitCloseClick)="onClose()"
+  [isValidDisabled]="!form.valid">
+  <form [formGroup]="form" class="vertical-centered">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input required matInput [formControlName]="'name'" type="text" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput matInput [formControlName]="'description'" type="text"></textarea>
+    </mat-form-field>
+  </form>
+</app-dialog-form>

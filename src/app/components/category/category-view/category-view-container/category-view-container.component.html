@@ -1,0 +1,10 @@
+<ng-container *ngIf="$category|async as category; else loading">
+  <app-category-view-presentation [category]="category" [tasks]="category.tasks" (emitDeleteCategory)="onDeleteCurrentCategory()"
+    (emitOnUpdateCategoryView)="onUpdateCategoryView($event)" (emitDeleteTask)="onDeleteTask($event)"
+    (emitOnUpdateTaskView)="onUpdateTaskView($event)" (emitUpdateTaskStatu)="onUpdateTaskStatu($event)"
+    (emitOnCreateTaskView)="onNewTaskView($event)"></app-category-view-presentation>
+</ng-container>
+
+<ng-template #loading>
+  <mat-spinner></mat-spinner>
+</ng-template>

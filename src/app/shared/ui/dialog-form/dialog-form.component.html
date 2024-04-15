@@ -1,0 +1,15 @@
+<div class="centered marged">
+  <h1 mat-dialog-title>{{title}}</h1>
+
+  <mat-dialog-content>
+    <ng-content></ng-content>
+
+    <mat-dialog-actions>
+      <div class="row-around w-100">
+        <app-button-cancel [text]="'Close'" (emitClick)="onCloseClick()"></app-button-cancel>
+        <app-button-validate [text]="'Validate'" (emitClick)="onValidateClick()"
+          [isDisabled]="isValidDisabled"></app-button-validate>
+      </div>
+    </mat-dialog-actions>
+  </mat-dialog-content>
+</div>
