@@ -1,27 +1,42 @@
 # TodoCern
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
+# Usage
+Application can be used by running **npm start**
 
-## Development server
+# Dependency
+This project uses :
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Angular Material for components / design
 
-## Code scaffolding
+- Ngx Toastr for notification
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Subsink to manage the unsubscribing of Observable easily
 
-## Build
+CERN font and CERN colours are used. Angular Material theme was generated using CERN colours.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+( https://design-guidelines.web.cern.ch/guidelines/colours )
 
-## Running unit tests
+( https://design-guidelines.web.cern.ch/guidelines/web-fonts )
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Architecture
+directories :
 
-## Further help
+- api : services for data api
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- components : components of application
+
+- core : core components (navbar) and http interceptor
+
+- model : enum and model files
+
+- shared : ui components and services
+
+Two modules are available:
+
+- The first is the app module which contains home's components.
+
+- The second is the category module, its lazy loaded when routing on Category View.
+
+Components follow the container / presentation design
